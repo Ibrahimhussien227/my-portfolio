@@ -16,27 +16,31 @@ const ShowcaseSection = () => {
       project1Ref.current,
       project2Ref.current,
       project3Ref.current,
-    ];
+    ].filter(Boolean);
 
     projects.forEach((card, i) => {
-      gsap.fromTo(
-        card,
-        {
-          y: 50,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          delay: 0.3 * (i + 1),
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom-=100",
+      if (card) {
+        gsap.fromTo(
+          card,
+          {
+            y: 50,
+            opacity: 0,
           },
-        }
-      );
-    }),
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            delay: 0.3 * (i + 1),
+            scrollTrigger: {
+              trigger: card,
+              start: "top bottom-=100",
+            },
+          }
+        );
+      }
+    });
+
+    if (sectionRef.current) {
       gsap.fromTo(
         sectionRef.current,
         {
@@ -47,6 +51,7 @@ const ShowcaseSection = () => {
           duration: 1.5,
         }
       );
+    }
   }, []);
 
   return (
