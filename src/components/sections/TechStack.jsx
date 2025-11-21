@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import TechIcon from "../models/TechLogos/TechIcon";
+import TechIcon from "../models/tech_logos/TechIcon";
 import TitleHeader from "../TitleHeader";
 import { techStackIcons } from "../../constants";
 
