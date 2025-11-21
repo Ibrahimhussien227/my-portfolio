@@ -1,8 +1,6 @@
-import React from "react";
-
 const Button = ({ text, className, id }) => {
   return (
-    <a
+    <button
       onClick={(e) => {
         e.preventDefault();
 
@@ -28,7 +26,7 @@ const Button = ({ text, className, id }) => {
           <img src="/images/arrow-down.svg" alt="arrow" />
         </div>
       </div>
-    </a>
+    </button>
   );
 };
 

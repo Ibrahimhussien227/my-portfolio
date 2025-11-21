@@ -1,4 +1,3 @@
-import React from "react";
 import { socialImgs } from "../../constants";
 
 const Footer = () => {
@@ -14,10 +13,17 @@ const Footer = () => {
             <a
               className="icon"
               target="_blank"
+              rel="noreferrer noopener"
+              aria-label={`Visit Ibrahim's ${img.name} profile`}
               href={img.url}
               key={img.url}
             >
-              <img src={img.imgPath} alt={img.name} />
+              <img
+                src={img.imgPath}
+                alt={img.name}
+                loading="lazy"
+                decoding="async"
+              />
             </a>
           ))}
         </div>

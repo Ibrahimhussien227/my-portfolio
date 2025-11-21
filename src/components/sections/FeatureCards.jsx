@@ -1,4 +1,3 @@
-import React from "react";
 
 import { abilities } from "../../constants";
 
@@ -12,7 +11,12 @@ const FeatureCards = () => {
             className="card-border rounded-xl p-8 flex flex-col gap-4"
           >
             <div className="size-14 flex items-center justify-center rounded-full">
-              <img src={imgPath} alt={title} />
+              <img
+                src={imgPath}
+                alt={title}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <h3 className="text-white text-2xl font-semibold mt-2">
               {title}

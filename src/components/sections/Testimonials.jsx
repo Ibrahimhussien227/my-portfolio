@@ -1,4 +1,3 @@
-import React from "react";
 
 import TitleHeader from "../TitleHeader";
 import GlowCard from "../GlowCard";
@@ -21,7 +20,12 @@ const Testimonials = () => {
             <GlowCard key={review} card={{ review }}>
               <div className="flex items-center gap-3">
                 <div>
-                  <img src={imgPath} alt={name} />
+                  <img
+                    src={imgPath}
+                    alt={name}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div>
                   <p className="font-bold">{name}</p>

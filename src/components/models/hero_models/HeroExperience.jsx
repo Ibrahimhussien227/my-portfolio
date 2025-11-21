@@ -1,4 +1,3 @@
-import React from "react";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useMediaQuery } from "react-responsive";
@@ -12,7 +11,7 @@ const HeroExperience = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
+    <Canvas camera={{ position: [0, 0, 15], fov: 45 }} dpr={[1, 1.5]}>
       <OrbitControls
         enablePan={false}
         enableZoom={!isTablet}
@@ -23,7 +22,7 @@ const HeroExperience = () => {
       />
 
       <HeroLights />
-      <Particles count={100} />
+      <Particles count={60} />
 
       <group
         scale={isMobile ? 0.7 : 1}

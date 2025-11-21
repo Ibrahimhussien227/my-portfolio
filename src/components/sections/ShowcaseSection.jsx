@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -61,7 +61,12 @@ const ShowcaseSection = () => {
           {/* LEFT */}
           <div className="first-project-wrapper" ref={project1Ref}>
             <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Ryde" />
+              <img
+                src="/images/project1.png"
+                alt="Ryde case study"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="text-content">
               <h2>
@@ -81,7 +86,9 @@ const ShowcaseSection = () => {
               <div className="image-wrapper bg-[#ffefdb]">
                 <img
                   src="/images/project2.png"
-                  alt="Library Managment Platform"
+                  alt="Library Management Platform screenshot"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h2>Library Managment Platform</h2>
@@ -89,7 +96,12 @@ const ShowcaseSection = () => {
 
             <div className="project" ref={project3Ref}>
               <div className="image-wrapper bg-[#ffe7eb]">
-                <img src="/images/project3.png" alt="YC Directory" />
+                <img
+                  src="/images/project3.png"
+                  alt="YC Directory app preview"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <h2>YC Directory - A Startup Showcase App</h2>
             </div>

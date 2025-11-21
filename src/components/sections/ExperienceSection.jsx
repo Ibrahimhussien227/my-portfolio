@@ -1,4 +1,3 @@
-import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -73,7 +72,12 @@ const ExperienceSection = () => {
                 <div className="xl:w-2/6">
                   <GlowCard card={card} i={i}>
                     <div>
-                      <img src={card.imgPath} alt={card.title} />
+                      <img
+                        src={card.imgPath}
+                        alt={card.title}
+                        loading="lazy"
+                        decoding="async"
+                      />
                     </div>
                   </GlowCard>
                 </div>
@@ -86,7 +90,12 @@ const ExperienceSection = () => {
                     </div>
                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                       <div className="timeline-logo">
-                        <img src={card.logoPath} alt="logo" />
+                        <img
+                          src={card.logoPath}
+                          alt={`${card.title} logo`}
+                          loading="lazy"
+                          decoding="async"
+                        />
                       </div>
                       <div>
                         <h1 className="font-semibold text-3xl">

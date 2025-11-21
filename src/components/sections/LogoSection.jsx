@@ -1,11 +1,15 @@
-import React from "react";
 
 import { logoIconsList } from "../../constants";
 
 const LogoIcon = ({ icon }) => {
   return (
     <div className="flex-none flex-center marquee-item">
-      <img src={icon.imgPath} alt="Company logo" />
+      <img
+        src={icon.imgPath}
+        alt="Company logo"
+        loading="lazy"
+        decoding="async"
+      />
     </div>
   );
 };

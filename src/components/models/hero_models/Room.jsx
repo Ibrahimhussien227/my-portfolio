@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import {
   EffectComposer,
