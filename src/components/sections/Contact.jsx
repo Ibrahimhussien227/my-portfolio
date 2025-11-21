@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import TitleHeader from "../TitleHeader";
@@ -20,8 +20,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    setLoading(true);
+    setLoading(true); // Show loading state
 
     try {
       await emailjs.sendForm(
@@ -31,11 +30,12 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
+      // Reset form and stop loading
       setForm({ name: "", email: "", message: "" });
     } catch (error) {
-      console.log("EMAILJS ERROR", error);
+      console.error("EmailJS Error:", error); // Optional: show toast
     } finally {
-      setLoading(false);
+      setLoading(false); // Always stop loading, even on error
     }
   };
 
@@ -46,55 +46,54 @@ const Contact = () => {
           title="Get in Touch – Let’s Connect"
           sub="💬 Have questions or ideas? Let’s talk! 🚀"
         />
-
-        <div className="mt-16 grid-12-cols">
+        <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
-            <div className="flex-center-card-border rounded-xl p-10">
+            <div className="flex-center card-border rounded-xl p-10">
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
                 className="w-full flex flex-col gap-7"
               >
                 <div>
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name">Your name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Your name"
                     value={form.name}
                     onChange={handleChange}
+                    placeholder="What’s your good name?"
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="email">Your Email</label>
                   <input
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
-                    placeholder="Your email address"
                     value={form.email}
                     onChange={handleChange}
+                    placeholder="What’s your email address?"
                     required
-                  />{" "}
+                  />
                 </div>
 
                 <div>
-                  <label htmlFor="message">Message</label>
+                  <label htmlFor="message">Your Message</label>
                   <textarea
-                    name="message"
                     id="message"
-                    rows="5"
-                    placeholder="Your message"
+                    name="message"
                     value={form.message}
                     onChange={handleChange}
+                    placeholder="How can I help you?"
+                    rows="5"
                     required
-                  ></textarea>
+                  />
                 </div>
 
-                <button type="submit" disabled={loading}>
+                <button type="submit">
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
@@ -108,7 +107,7 @@ const Contact = () => {
               </form>
             </div>
           </div>
-          <div className="xl:col-spa-7 min-h-96">
+          <div className="xl:col-span-7 min-h-96">
             <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
               <ContactExperience />
             </div>
